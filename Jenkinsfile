@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-       SONAR_CREDS = credentials('DOCKER_CREDS')
+       SONAR_CREDS = credentials('SONAR-CREDS')
     }
     stages {
         stage ('this is credentials example') {
