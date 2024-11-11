@@ -1,30 +1,14 @@
 pipeline {
     agent any
     environment {
-        cdb = "hsps03pd"
-        pdb = "spscores"
-        schema = "spsowner"
+       SONAR_CREDS = credentials('sonar-creds')
     }
     stages {
-        stage ('this is env 2 example') {
+        stage ('this is credentials example') {
             steps {
-                echo " this is ${cdb} - container "
-                echo " this is ${pdb} - database"
-                echo " this is ${schema} - schema"
+                echo "username is ${SONAR_CREDS_USR}"
+                echo "password is ${SONAR_CREDS_PSW}"
             }
-       }
-       stage ('this is stage - 2') {
-        environment {
-            cdb = "vspscmpp1"
-            pdb = "SPSODSVCP"
-            schema = "XTROWNER"   
-            table = "PROVUPDT"         
         }
-        steps {
-                echo " this is ${cdb} - container "
-                echo " this is ${pdb} - database"
-                echo " this is ${schema} - schema"           
-        }
-       }
     }
 }
