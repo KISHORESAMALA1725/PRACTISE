@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-       MY_CREDS = credentials('java-slave-siva-creds')
+       MY_CREDS = credentials('PIPELINE_D5')
     }
     stages {
         stage ('this is credentials example') {
