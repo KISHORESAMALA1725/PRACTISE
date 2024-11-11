@@ -13,19 +13,18 @@ pipeline {
                 echo " this is ${schema} - schema"
             }
        }
-        stage ('this is stage 2')
-            environment {
-                cdb = "vspscmpp1"
-                pdb = "SPSODSVCP"
-                schema = "XTROWNER"          
-                table = "PROV-UPDT"      
-            }
-            steps {
+       stage ('this is stage - 2') {
+        environment {
+            cdb = "hsps03pd"
+            pdb = "spscores"
+            schema = "spsowner"   
+            table = "PROVUPDT"         
+        }
+        steps {
                 echo " this is ${cdb} - container "
                 echo " this is ${pdb} - database"
-                echo " this is ${schema} - schema"
-                echo " this is ${table} - name"
-            }
-        
+                echo " this is ${schema} - schema"           
+        }
+       }
     }
 }
