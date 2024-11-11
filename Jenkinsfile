@@ -13,7 +13,7 @@ pipeline {
                 echo " this is ${schema} - schema"
             }
        }
-        stage {
+        stage ('this is stage 2')
             environment {
                 cdb = "vspscmpp1"
                 pdb = "SPSODSVCP"
@@ -26,6 +26,6 @@ pipeline {
                 echo " this is ${schema} - schema"
                 echo " this is ${table} - name"
             }
-        }
+        
     }
 }
