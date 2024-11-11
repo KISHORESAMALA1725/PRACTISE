@@ -5,7 +5,7 @@ pipeline {
             steps {
                 retry (3){ 
                 echo " **** RETRYING ****"
-                sh 'sleep 30'
+                error "JOB FAILED AFTER RETRY"
             }
         }
     }
