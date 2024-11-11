@@ -11,7 +11,7 @@ pipeline {
                 sh 'mvn -version'
             }
         }
-        stage {
+        stage ('MVN AUTOINSTALLER') {
             tools {
                 maven 'maven-autoinstaller'
                 jdk 'JDK-17'
@@ -21,6 +21,7 @@ pipeline {
                 sh 'java -version'
             }
         }
+
 
     }
 }
