@@ -1,13 +1,13 @@
 pipeline {
     agent any
     environment {
-       SONAR_CREDS = credentials('sonar-creds')
+       MY_CREDS = credentials('sonar-creds')
     }
     stages {
         stage ('this is credentials example') {
             steps {
-                echo "username is ${SONAR_CREDS_USR}"
-                echo "password is ${SONAR_CREDS_PSW}"
+                echo "username is ${MY_CREDS_USR}"
+                echo "password is ${MY_CREDS_PSW}"
             }
         }
     }
