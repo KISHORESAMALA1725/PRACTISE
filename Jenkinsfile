@@ -15,9 +15,9 @@ pipeline {
        }
        stage ('this is stage - 2') {
         environment {
-            cdb = "hsps03pd"
-            pdb = "spscores"
-            schema = "spsowner"   
+            cdb = "vspscmpp1"
+            pdb = "SPSODSVCP"
+            schema = "XTROWNER"   
             table = "PROVUPDT"         
         }
         steps {
