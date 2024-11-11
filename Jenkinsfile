@@ -1,13 +1,26 @@
 pipeline {
-    agent any
-    stages {
-        stage ('This is timeout stage example') {
+    agent {
+        slave 'java-slave'
+    }
+    tools {
+        maven 'maven-3.8.8'
+    }
+    stages{
+        stage ('This is maven-stage') {
             steps {
-                timeout(time: 10, unit: "SECONDS") {
-                    echo " ******* TIME-OUT, PLEASE TRY AGAIN"
-                    sleep 60
-                }
+                sh 'mvn -version'
             }
         }
+        stage {
+            tools {
+                maven 'maven-autoinstaller'
+                jdk 'JDK-17'
+            }
+            steps {
+                sh 'mvn -version'
+                sh 'java -version'
+            }
+        }
+
     }
 }
