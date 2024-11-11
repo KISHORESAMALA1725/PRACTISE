@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script{
                     def course = 'Devops'
-                    if (course == "${course}")
+                    if (course !== "${course}")
                     println ("welcome to ${course} - Course")
                     else
                     println ("Please enroll to ${course} - Course")
