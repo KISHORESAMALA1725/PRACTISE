@@ -1,11 +1,12 @@
 pipeline {
-    agent any 
-        stages {
-            stage ('this is error stage') {
-                steps {
-                    echo " **** THIS WILL ERROR OUT"
-                    error " ORA-01555"
-                }
+    agent any
+    stages {
+        stage ("this is retry stage") {
+            steps {
+                retry (3)
+                echo " **** RETRYING ****"
+                sh 'sleep 30'
             }
         }
+    }
 }
