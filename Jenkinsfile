@@ -4,11 +4,11 @@ pipeline {
         stage ('This is First stage') {
             steps {
                 script{
-                    def course = 'K8S'
+                    def course = 'Devops'
                     if (course == "${course}")
                     println ("welcome to ${course} - Course")
                     else
-                    println ("Please enrool to ${course} - Course")
+                    println ("Please enroll to ${course} - Course")
                 }
             }
         }
