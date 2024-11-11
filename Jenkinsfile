@@ -1,29 +1,17 @@
 pipeline {
-    agent {
-        label 'java-slave'
+    agent any
+    environment {
+        cdb = 'hsps03pd'
+        pdb = 'spsocres'
+        schema = 'spsowner'
     }
-    tools {
-        maven 'maven-3.8.8'
-    }
-    stages{
-        stage ('This is maven-stage') {
+    stages {
+        stage ('this is env stage') {
             steps {
-                sh 'mvn -version'
+                echo "CDB name is ${cdb}"
+                echo "pdb name is ${pdb}"
+                echo "schema name is ${schema}"
             }
         }
-        stage ('MVN AUTOINSTALLER') {
-            tools {
-                maven 'maven-autoinstaller'
-                jdk 'JDK-17'
-            }
-            steps {
-                sh 'mvn -version'
-                sh 'java -version'
-            }
-        }
-
-
     }
 }
-
-
