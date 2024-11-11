@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('This is First stage') {
             steps {
-                script{
+                script{ 
                     def course = 'K8S'
                     if (course == "${K8S}")
                     println ('welcome to ${K8S} - Course')
