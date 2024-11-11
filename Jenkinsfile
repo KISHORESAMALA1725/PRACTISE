@@ -1,14 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage ("this is retry stage") {
-            steps {
-                retry (3){ 
-                echo " **** RETRYING ****"
-                error "JOB FAILED AFTER RETRY ${index.[0]}"
-            }
+        stage ('This is time-out example') {
+            timeout (time: 10, unit: 'SECONDS')
+            echo " TIMEOUT OVERWRITES  SLEEP"
+            sleep 30
         }
     }
-}
-
 }
