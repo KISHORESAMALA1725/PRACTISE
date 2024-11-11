@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('This is timeout stage example') {
             steps {
-                timeout(TIME: 10, UNIT: "SECONDS") {
+                timeout(time: 10, unit: "SECONDS") {
                     echo " ******* TIME-OUT, PLEASE TRY AGAIN"
                     sleep 60
                 }
