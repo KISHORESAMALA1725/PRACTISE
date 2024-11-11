@@ -5,7 +5,7 @@ pipeline {
             steps {
                 retry (3){ 
                 echo " **** RETRYING ****"
-                error "JOB FAILED AFTER RETRY ${retry.[0]}"
+                error "JOB FAILED AFTER RETRY ${index.[0]}"
             }
         }
     }
