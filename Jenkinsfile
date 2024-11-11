@@ -1,11 +1,11 @@
 pipeline {
     agent any
-    stages{
-        stage ('this is timeout example') {
+    stages {
+        stage ('This is timeout stage example') {
             steps {
-                timeout (time: 10, unit: 'SECONDS') {
-                echo " *** This is time-out example"
-                sleep 30
+                timeout(TIME: 10, UNIT: "SECONDS") {
+                    echo " ******* TIME-OUT, PLEASE TRY AGAIN"
+                    sleep 60
                 }
             }
         }
