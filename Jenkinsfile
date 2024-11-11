@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-       MY_CREDS = credentials('nexus-creds')
+       MY_CREDS = credentials('java-slave-siva-creds')
     }
     stages {
         stage ('this is credentials example') {
